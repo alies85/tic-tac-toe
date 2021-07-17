@@ -31,17 +31,20 @@ const isdone = () => {
     for (let i = 0; i < 4; i++) {
         if (strcmp(list[i], list[i + 3], list[i + 6])) {
             won(i, i+3, i+6)
+            return
         }
     }
     // check horizontally
     for (let i = 0; i < 7; i += 3) {
         if (strcmp(list[i], list[i + 1], list[i + 2])) {
             won(i, i+1, i+2)
+            return
         }
     }
     // check diametrically
     if (strcmp(list[0], list[4], list[8])) {
         won(0, 4, 8)
+        return
 
     } else if (strcmp(list[2], list[4], list[6])) {
         won(2, 4, 6)
