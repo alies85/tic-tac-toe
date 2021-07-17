@@ -52,7 +52,6 @@ const isdone = () => {
     // tie
     } else if (!list.includes(null)) {
         // disable all
-        console.log("drawn")
         Array.from(document.querySelector(".board").children).forEach(div => {
             div.classList.add("disabled")
         })
@@ -64,7 +63,6 @@ const isdone = () => {
 document.querySelector(".board").addEventListener("click", e => {
     if (e.target.className.includes("board__tile") &&
         e.target.innerHTML.length == 0) {
-        console.log(turn)
         let number = e.target.attributes["data-index"].value
         e.target.innerHTML = turn
         list[number-1] = turn
