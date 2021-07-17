@@ -4,8 +4,8 @@ let list = Array(9).fill(null)
 
 const updateTurn = () => {
     let status_element = document.querySelector(".header__turn")
-    status_element.innerHTML = `${turn}'s turn`
     turn = turn === "X" ? "O" : "X"
+    status_element.innerHTML = `${turn}'s turn`
 }
 
 const isdone = () => {
@@ -61,6 +61,7 @@ const isdone = () => {
 document.querySelector(".board").addEventListener("click", e => {
     if (e.target.className.includes("board__tile") &&
         e.target.innerHTML.length == 0) {
+        console.log(turn)
         let number = e.target.attributes["data-index"].value
         e.target.innerHTML = turn
         list[number-1] = turn
